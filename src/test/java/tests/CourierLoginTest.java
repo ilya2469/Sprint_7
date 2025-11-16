@@ -76,7 +76,7 @@ public class CourierLoginTest extends BaseTest {
     @DisplayName("Нельзя авторизоваться без пароля")
     @Description("Проверка, что для авторизации нужно передать пароль")
     public void loginWithoutPasswordReturnsError() {
-        CourierCredentials credentials = new CourierCredentials(courier.getLogin(), null);
+        CourierCredentials credentials = new CourierCredentials(courier.getLogin(), "");
         courierClient.loginCourier(credentials)
                 .then()
                 .statusCode(400)
